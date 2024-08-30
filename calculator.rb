@@ -6,7 +6,7 @@ class Calculator
   def add(str_num)
     return 0 if str_num.strip.empty?
 
-    raise 'Negative numbers not allowed' if str_num.include?('-')
+    raise 'negative numbers not allowed' if str_num.include?('-')
 
     perform_sum(format_values(str_num))
   end
