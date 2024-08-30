@@ -22,21 +22,7 @@ class Calculator
     end
   end
 
-  def handle_new_line(str_num)
-    str_num.strip.gsub('\n', ',')
-  end
-
-  def handle_delimiters(str_num)
-    handle_new_line(str_num)
-    str_num.strip.gsub(';', ',')
-  end
-
   def format_values(str_num)
-    if str_num.include?('\n') || str_num.include?('//')
-      formatted_new_line = handle_new_line(str_num)
-      handle_delimiters(formatted_new_line)
-    else
-      str_num.split(',')
-    end
+    str_num.strip.gsub(/[^\d]/, ',').split(',')
   end
 end
