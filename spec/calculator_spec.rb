@@ -32,7 +32,9 @@ describe Calculator do
     end
 
     it 'should raise an exception for negative numbers' do
-      expect(calc.add('-1')).to raise_error
+      expect { calc.add('-1') }.to raise_exception 'Negative numbers not allowed'
     end
+
+    
   end
 end
