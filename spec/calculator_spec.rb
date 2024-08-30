@@ -25,5 +25,10 @@ describe Calculator do
       response = calc.add('1\n2,3')
       expect(response).to eq(6)
     end
+
+    it 'should handle delimiters in the input' do
+      response = calc.add('//;\n1;2')
+      expect(response).to eq(3)
+    end
   end
 end
