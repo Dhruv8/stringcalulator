@@ -8,18 +8,13 @@ class Calculator
 
     raise 'Negative numbers not allowed' if str_num.include?('-')
 
-    formatted_values = format_values(str_num)
-    perform_sum(formatted_values)
+    perform_sum(format_values(str_num))
   end
 
   private
 
   def perform_sum(values)
-    if values.is_a? String
-      values.split(',').reduce(0) { |sum, num| sum + num.to_i }
-    else
-      values.reduce(0) { |sum, num| sum + num.to_i }
-    end
+    values.reduce(0) { |sum, num| sum + num.to_i }
   end
 
   def format_values(str_num)

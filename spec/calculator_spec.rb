@@ -3,7 +3,7 @@
 require './calculator'
 
 describe Calculator do
-  describe '#add' do
+  context '#add' do
     let!(:calc) { Calculator.new }
 
     it 'should return 0 for nil or empty string' do
@@ -34,7 +34,5 @@ describe Calculator do
     it 'should raise an exception for negative numbers' do
       expect { calc.add('-1') }.to raise_exception 'Negative numbers not allowed'
     end
-
-    
   end
 end
