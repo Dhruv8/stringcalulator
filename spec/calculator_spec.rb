@@ -30,5 +30,9 @@ describe Calculator do
       response = calc.add('//;\n1;2')
       expect(response).to eq(3)
     end
+
+    it 'should raise an exception for negative numbers' do
+      expect(calc.add('-1')).to raise_error
+    end
   end
 end
