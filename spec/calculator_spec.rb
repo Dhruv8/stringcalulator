@@ -20,5 +20,10 @@ describe Calculator do
       response = calc.add('5, 6')
       expect(response).to eq(11)
     end
+
+    it 'should handle new lines between numbers' do
+      response = calc.add('1\n2,3')
+      expect(response).to eq(6)
+    end
   end
 end

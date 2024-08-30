@@ -5,7 +5,8 @@ class Calculator
   def add(str_num)
     return 0 if str_num.strip.empty?
 
-    values = handle_multiple_values(str_num)
+    formatted_values = handle_new_line(str_num)
+    values = handle_multiple_values(formatted_values)
     perform_sum(values)
   end
 
@@ -17,5 +18,9 @@ class Calculator
 
   def perform_sum(values)
     values.reduce(0) { |sum, num| sum + num.to_i }
+  end
+
+  def handle_new_line(str_num)
+    str_num.strip.gsub('\n', ',')
   end
 end
