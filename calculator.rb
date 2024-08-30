@@ -5,12 +5,17 @@ class Calculator
   def add(str_num)
     return 0 if str_num.strip.empty?
 
-    convert_to_number(str_num)
+    values = handle_multiple_values(str_num)
+    perform_sum(values)
   end
 
   private
 
-  def convert_to_number(str_num)
-    str_num.to_i
+  def handle_multiple_values(str_num)
+    str_num.split(',')
+  end
+
+  def perform_sum(values)
+    values.reduce(0) { |sum, num| sum + num.to_i }
   end
 end

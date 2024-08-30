@@ -15,5 +15,10 @@ describe Calculator do
       response = calc.add('1')
       expect(response).to eq(1)
     end
+
+    it 'should return sum for comma separted values' do
+      response = calc.add('5, 6')
+      expect(response).to eq(11)
+    end
   end
 end
